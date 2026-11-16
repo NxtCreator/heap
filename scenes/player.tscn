@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dhimhrj0ytlq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62jd7"]
+size = Vector2(32, 32)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1523709349]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=419664863]
+shape = SubResource("RectangleShape2D_62jd7")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=924564717]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
