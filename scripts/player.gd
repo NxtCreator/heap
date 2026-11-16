@@ -1,14 +1,15 @@
 extends CharacterBody2D
 
-const GRAVITY = 500
+const GRAVITY = 1200
 const SPEED = 300
-const JUMP_SPEED = 200
+const JUMP_SPEED = -500
 
 
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("move_up"):
+	if Input.is_action_just_pressed("move_up") and is_on_floor():
 		velocity.y = JUMP_SPEED
+		
 		
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
