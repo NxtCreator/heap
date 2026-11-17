@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bj1eekwo4he44"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62jd7"]
-size = Vector2(1000, 32)
+size = Vector2(300, 32)
 
 [node name="Main" type="Node2D" unique_id=1662324567]
 
