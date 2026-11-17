@@ -54,6 +54,7 @@ move_up={
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
 2d_physics/layer_3="falling_platforms"
+2d_physics/layer_4="hurt_box"
 
 [physics]
 
