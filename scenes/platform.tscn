@@ -9,6 +9,7 @@ size = Vector2(128, 32)
 size = Vector2(128, 32)
 
 [node name="Platform" type="AnimatableBody2D" unique_id=425192982]
+collision_layer = 4
 sync_to_physics = false
 script = ExtResource("1_ba0x2")
 
