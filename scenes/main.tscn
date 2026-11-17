@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://bj1eekwo4he44"]
 
+[ext_resource type="PackedScene" uid="uid://bi6e4p8lcsauk" path="res://scenes/platform.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://dhimhrj0ytlq" path="res://scenes/player.tscn" id="1_o5qli"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62jd7"]
 size = Vector2(300, 32)
 
 [node name="Main" type="Node2D" unique_id=1662324567]
+
+[node name="Platform" parent="." unique_id=425192982 instance=ExtResource("1_0wfyh")]
+position = Vector2(576, 100)
 
 [node name="Player" parent="." unique_id=1523709349 instance=ExtResource("1_o5qli")]
 position = Vector2(576, 568)
