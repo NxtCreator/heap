@@ -4,6 +4,7 @@ const GRAVITY = 1200
 const SPEED = 300
 const JUMP_SPEED = -500
 var is_dead = false
+const DEATH_PUFF = preload("res://scenes/death_puff.tscn")
 
 
 
@@ -11,7 +12,10 @@ func die():
 	if is_dead:
 		return
 	is_dead = true
-	print("Squashed")
+	var death_puff = DEATH_PUFF.instantiate()
+	death_puff.emitting = true
+	get_parent().add_child(death_puff)
+	death_puff.global_position = global_position
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
