@@ -13,6 +13,9 @@ func _physics_process(delta: float) -> void:
 		
 		if collision != null:
 			is_falling = false
+			set_collision_layer_value(3, false)
+			set_collision_layer_value(1, true)
+			
 			
 			for body in $Hurtbox.get_overlapping_bodies():
 				body.die()
