@@ -3,10 +3,14 @@ extends CharacterBody2D
 const GRAVITY = 1200
 const SPEED = 300
 const JUMP_SPEED = -500
+var is_dead = false
 
 
 
 func die():
+	if is_dead:
+		return
+	is_dead = true
 	print("Squashed")
 
 func _physics_process(delta: float) -> void:
