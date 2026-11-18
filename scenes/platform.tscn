@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://h02v1mf04cjt" path="res://scripts/platform.gd" id="1_ba0x2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62jd7"]
+resource_local_to_scene = true
 size = Vector2(128, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qktli"]
+resource_local_to_scene = true
 size = Vector2(128, 32)
 
 [node name="Platform" type="AnimatableBody2D" unique_id=425192982]
