@@ -3,6 +3,9 @@ const FALL_SPEED := 100
 var is_falling = true
 
 
+func _ready() -> void:
+	$Polygon2D.color = Palette.MID
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	if is_falling:

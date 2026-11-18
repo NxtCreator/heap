@@ -17,6 +17,9 @@ func die():
 	get_parent().add_child(death_puff)
 	death_puff.global_position = global_position
 	hide()
+	
+func _ready() -> void:
+	$Polygon2D.color = Palette.FG
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
