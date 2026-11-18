@@ -2,14 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://bi6e4p8lcsauk" path="res://scenes/platform.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://dhimhrj0ytlq" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://b455u27kh8o35" path="res://scripts/main.gd" id="1_sugp2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62jd7"]
 size = Vector2(300, 32)
 
 [node name="Main" type="Node2D" unique_id=1662324567]
-
-[node name="Platform2" parent="." unique_id=425192982 instance=ExtResource("1_0wfyh")]
-position = Vector2(576, -200)
+script = ExtResource("1_sugp2")
 
 [node name="Platform" parent="." unique_id=397508024 instance=ExtResource("1_0wfyh")]
 position = Vector2(576, 100)
@@ -28,3 +27,9 @@ shape = SubResource("RectangleShape2D_62jd7")
 position = Vector2(576, 600)
 color = Color(0.46990192, 0.37938827, 0.053849228, 1)
 polygon = PackedVector2Array(-150, -16, 150, -16, 150, 16, -150, 16)
+
+[node name="Timer" type="Timer" parent="." unique_id=1133667598]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
