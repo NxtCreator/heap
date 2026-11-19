@@ -3,7 +3,8 @@ const PLATFORM = preload("res://scenes/platform.tscn")
 const MIN_X = 426
 const MAX_X = 726
 
-
+func _on_platform_landed(top_y):
+	print(top_y)
 
 func _on_timer_timeout() -> void:
 	var platform = PLATFORM.instantiate()
@@ -15,4 +16,6 @@ func _on_timer_timeout() -> void:
 	else:
 		platform.set_size(32, length)
 	platform.global_position = Vector2(randf_range(MIN_X, MAX_X), -100)
+	platform.landed.connect(_on_platform_landed)
+	
 	
