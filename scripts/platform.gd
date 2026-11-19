@@ -3,6 +3,8 @@ const FALL_SPEED := 100
 var is_falling = true
 var platform_h = 32
 
+signal landed(top_y)
+
 
 func set_size(w, h):
 	platform_h = h
@@ -29,6 +31,7 @@ func _physics_process(delta: float) -> void:
 			is_falling = false
 			set_collision_layer_value(3, false)
 			set_collision_layer_value(1, true)
+			landed.emit(global_position.y - platform_h / 2.0)
 			
 			
 			for body in $Hurtbox.get_overlapping_bodies():
