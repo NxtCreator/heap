@@ -32,4 +32,7 @@ polygon = PackedVector2Array(-150, -16, 150, -16, 150, 16, -150, 16)
 wait_time = 2.0
 autostart = true
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=798973348]
+position = Vector2(576, 324)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
