@@ -2,9 +2,12 @@ extends Node2D
 const PLATFORM = preload("res://scenes/platform.tscn")
 const MIN_X = 426
 const MAX_X = 726
+var highest_platform_edge = 584
+const CAMERA_OFFSET = 260
 
 func _on_platform_landed(top_y):
-	print(top_y)
+	highest_platform_edge = min(highest_platform_edge, top_y)
+	$Camera2D.position.y = highest_platform_edge - CAMERA_OFFSET
 
 func _on_timer_timeout() -> void:
 	var platform = PLATFORM.instantiate()
