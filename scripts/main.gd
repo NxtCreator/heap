@@ -10,6 +10,6 @@ func _on_timer_timeout() -> void:
 	var block_sizes = [32, 64, 96, 128, 160]
 	var block_size = block_sizes.pick_random()
 	add_child(platform)
-	platform.set_width(block_size)
+	platform.set_size(block_size, 32)
 	platform.global_position = Vector2(randf_range(MIN_X, MAX_X), -100)
 	

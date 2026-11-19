@@ -3,15 +3,16 @@ const FALL_SPEED := 100
 var is_falling = true
 
 
-func set_width(w):
-	$CollisionShape2D.shape.size = Vector2(w, 32)
-	$Hurtbox/CollisionShape2D.shape.size = Vector2(w, 32)
-	var half = w / 2.0
+func set_size(w, h):
+	$CollisionShape2D.shape.size = Vector2(w, h)
+	$Hurtbox/CollisionShape2D.shape.size = Vector2(w, h)
+	var half_w = w / 2.0
+	var half_h = h / 2.0
 	$Polygon2D.polygon = PackedVector2Array([
-		Vector2(-half, -16),
-		Vector2(half, -16),
-		Vector2(half, 16),
-		Vector2(-half, 16)
+		Vector2(-half_w, -half_h),
+		Vector2(half_w, -half_h),
+		Vector2(half_w, half_h),
+		Vector2(-half_w, half_h)
 	])
 
 func _ready() -> void:
