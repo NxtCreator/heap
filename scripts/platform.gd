@@ -6,6 +6,13 @@ var is_falling = true
 func set_width(w):
 	$CollisionShape2D.shape.size = Vector2(w, 32)
 	$Hurtbox/CollisionShape2D.shape.size = Vector2(w, 32)
+	var half = w / 2.0
+	$Polygon2D.polygon = PackedVector2Array([
+		Vector2(-half, -16),
+		Vector2(half, -16),
+		Vector2(half, 16),
+		Vector2(-half, 16)
+	])
 
 func _ready() -> void:
 	$Polygon2D.color = Palette.MID
