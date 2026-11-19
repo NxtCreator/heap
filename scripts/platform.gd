@@ -3,8 +3,13 @@ const FALL_SPEED := 100
 var is_falling = true
 
 
+func set_width(w):
+	$CollisionShape2D.shape.size = Vector2(w, 32)
+	$Hurtbox/CollisionShape2D.shape.size = Vector2(w, 32)
+
 func _ready() -> void:
 	$Polygon2D.color = Palette.MID
+	set_width(64)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
