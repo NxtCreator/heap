@@ -1,9 +1,11 @@
 extends AnimatableBody2D
 const FALL_SPEED := 100
 var is_falling = true
+var platform_h = 32
 
 
 func set_size(w, h):
+	platform_h = h
 	$CollisionShape2D.shape.size = Vector2(w, h)
 	$Hurtbox/CollisionShape2D.shape.size = Vector2(w, h)
 	var half_w = w / 2.0
