@@ -16,7 +16,6 @@ func set_width(w):
 
 func _ready() -> void:
 	$Polygon2D.color = Palette.MID
-	set_width(64)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
