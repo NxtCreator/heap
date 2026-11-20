@@ -7,19 +7,28 @@ var highest_platform_edge = 584.0
 const CAMERA_LINE_Y = 324.0
 var camera_target_y = min(324.0, highest_platform_edge + 324.0 - CAMERA_LINE_Y)
 
+const BLOCK_SHAPES = [
+	Vector2(32, 32), Vector2(64, 32), Vector2(64, 32),
+	Vector2(96, 32), Vector2(96, 32), Vector2(128, 32),
+	Vector2(160, 32), Vector2(32, 64), Vector2(32, 96),
+]
+var bag = []
+
+func next_block_size():
+	if bag.is_empty():
+		bag = BLOCK_SHAPES.duplicate()
+		bag.shuffle()
+	return bag.pop_back()
+
 func _on_platform_landed(top_y):
 	highest_platform_edge = min(highest_platform_edge, top_y)
 	camera_target_y = min(324.0, highest_platform_edge + 324.0 - CAMERA_LINE_Y)
 	
 func _on_timer_timeout() -> void:
 	var platform = PLATFORM.instantiate()
-	var sleeping_block_sizes = [32, 64, 96, 128, 160]
-	var standing_block_sizes = [64, 96]
 	add_child(platform)
-	if randf() < 0.5:
-		platform.set_size(sleeping_block_sizes.pick_random(), 32)
-	else:
-		platform.set_size(32, standing_block_sizes.pick_random())
+	var size = next_block_size()
+	platform.set_size(size.x, size.y)
 	platform.global_position = Vector2(randf_range(MIN_X, MAX_X), $Camera2D.position.y - 424)
 	platform.landed.connect(_on_platform_landed)
 	

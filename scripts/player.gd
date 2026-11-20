@@ -42,7 +42,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	var height  = (start_y - global_position.y) /  32
 	best_height = int(max(height, best_height))
-	print(best_height)
 	
 	var camera_view_pos = get_viewport().get_camera_2d().global_position.y
 	if camera_view_pos + OFFSCREEN_DEATH_Y < global_position.y:
