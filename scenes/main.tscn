@@ -37,7 +37,16 @@ position = Vector2(576, 324)
 
 [node name="EnemyTimer" type="Timer" parent="." unique_id=446486266]
 wait_time = 5.0
-autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=251631521]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=891916763]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]

@@ -25,10 +25,15 @@ func _on_timer_timeout() -> void:
 	
 func _process(_delta: float) -> void:
 	$Camera2D.position.y = lerp($Camera2D.position.y, camera_target_y, 0.5)
-	
-	
-func _on_enemy_timer_timeout() -> void:
-	if get_tree().get_first_node_in_group("enemies") == null:
-		var enemy = ENEMY.instantiate()
-		$Camera2D.add_child(enemy)
-		enemy.position = Vector2(randf_range(-300, 300), -250)
+	var player = get_tree().get_first_node_in_group("player")
+	if player == null:
+		return
+		
+	$CanvasLayer/ScoreLabel.text = str(player.best_height)
+		
+# Shelved for now
+#func _on_enemy_timer_timeout() -> void:
+	#if get_tree().get_first_node_in_group("enemies") == null:
+		#var enemy = ENEMY.instantiate()
+		#$Camera2D.add_child(enemy)
+		#enemy.position = Vector2(randf_range(-300, 300), -250)
