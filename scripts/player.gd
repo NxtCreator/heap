@@ -5,7 +5,7 @@ const SPEED = 300
 const JUMP_SPEED = -500
 var is_dead = false
 const DEATH_PUFF = preload("res://scenes/death_puff.tscn")
-const OFFSCREEN_DEATH_Y = 324.0
+const OFFSCREEN_DEATH_Y = 374.0
 
 
 

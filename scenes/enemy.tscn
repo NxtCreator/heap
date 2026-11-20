@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://laww8v53il1k"]
+
+[ext_resource type="Script" uid="uid://ce3gs6g7l1gyk" path="res://scripts/enemy.gd" id="1_7p1mj"]
+
+[node name="Enemy" type="Area2D" unique_id=1126184250]
+script = ExtResource("1_7p1mj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=53050752]
+
+[node name="Body" type="Polygon2D" parent="." unique_id=670200300]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[node name="Barrel" type="Polygon2D" parent="." unique_id=263120402]
+polygon = PackedVector2Array(0, -4, 32, -4, 32, 4, 0, 4)
