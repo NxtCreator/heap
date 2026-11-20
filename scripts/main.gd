@@ -13,13 +13,13 @@ func _on_platform_landed(top_y):
 	
 func _on_timer_timeout() -> void:
 	var platform = PLATFORM.instantiate()
-	var block_sizes = [32, 64, 96, 128, 160]
-	var length = block_sizes.pick_random()
+	var sleeping_block_sizes = [32, 64, 96, 128, 160]
+	var standing_block_sizes = [64, 96]
 	add_child(platform)
 	if randf() < 0.5:
-		platform.set_size(length, 32)
+		platform.set_size(sleeping_block_sizes.pick_random(), 32)
 	else:
-		platform.set_size(32, length)
+		platform.set_size(32, standing_block_sizes.pick_random())
 	platform.global_position = Vector2(randf_range(MIN_X, MAX_X), $Camera2D.position.y - 424)
 	platform.landed.connect(_on_platform_landed)
 	

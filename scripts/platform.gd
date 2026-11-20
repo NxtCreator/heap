@@ -32,7 +32,7 @@ func _draw() -> void:
 			draw_rect(Rect2(cell_pos, Vector2(32, 32)), Palette.FG, false, 2)
 
 func _ready() -> void:
-	$Polygon2D.color = Palette.MID
+	$Polygon2D.color = Palette.DARK
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
