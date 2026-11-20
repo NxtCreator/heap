@@ -5,6 +5,7 @@ const SPEED = 300
 const JUMP_SPEED = -500
 var is_dead = false
 const DEATH_PUFF = preload("res://scenes/death_puff.tscn")
+const OFFSCREEN_DEATH_Y = 324.0
 
 
 
@@ -36,6 +37,10 @@ func _physics_process(delta: float) -> void:
 		
 	velocity.y += GRAVITY * delta
 	move_and_slide()
+	
+	var camera_view_pos = get_viewport().get_camera_2d().global_position.y
+	if camera_view_pos + OFFSCREEN_DEATH_Y < global_position.y:
+		die()
 	
 	if is_on_floor() and is_on_ceiling():
 		die()
