@@ -6,6 +6,8 @@ const JUMP_SPEED = -500
 var is_dead = false
 const DEATH_PUFF = preload("res://scenes/death_puff.tscn")
 const OFFSCREEN_DEATH_Y = 374.0
+var best_height := 0
+var start_y = 0
 
 
 
@@ -21,6 +23,7 @@ func die():
 	
 func _ready() -> void:
 	$Polygon2D.color = Palette.FG
+	start_y = global_position.y
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -37,6 +40,9 @@ func _physics_process(delta: float) -> void:
 		
 	velocity.y += GRAVITY * delta
 	move_and_slide()
+	var height  = (start_y - global_position.y) /  32
+	best_height = int(max(height, best_height))
+	print(best_height)
 	
 	var camera_view_pos = get_viewport().get_camera_2d().global_position.y
 	if camera_view_pos + OFFSCREEN_DEATH_Y < global_position.y:
