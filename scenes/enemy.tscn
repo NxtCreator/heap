@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ce3gs6g7l1gyk" path="res://scripts/enemy.gd" id="1_7p1mj"]
 
-[node name="Enemy" type="Area2D" unique_id=1126184250]
+[node name="Enemy" type="Area2D" unique_id=1126184250 groups=["enemies"]]
 script = ExtResource("1_7p1mj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=53050752]

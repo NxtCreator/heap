@@ -1,5 +1,6 @@
 extends Node2D
 const PLATFORM = preload("res://scenes/platform.tscn")
+const ENEMY = preload("res://scenes/enemy.tscn")
 const MIN_X = 426
 const MAX_X = 726
 var highest_platform_edge = 584.0
@@ -9,6 +10,7 @@ var camera_target_y = min(324.0, highest_platform_edge + 324.0 - CAMERA_LINE_Y)
 func _on_platform_landed(top_y):
 	highest_platform_edge = min(highest_platform_edge, top_y)
 	camera_target_y = min(324.0, highest_platform_edge + 324.0 - CAMERA_LINE_Y)
+	
 func _on_timer_timeout() -> void:
 	var platform = PLATFORM.instantiate()
 	var block_sizes = [32, 64, 96, 128, 160]
@@ -25,3 +27,8 @@ func _process(_delta: float) -> void:
 	$Camera2D.position.y = lerp($Camera2D.position.y, camera_target_y, 0.5)
 	
 	
+func _on_enemy_timer_timeout() -> void:
+	if get_tree().get_first_node_in_group("enemies") == null:
+		var enemy = ENEMY.instantiate()
+		$Camera2D.add_child(enemy)
+		enemy.position = Vector2(randf_range(-300, 300), -250)

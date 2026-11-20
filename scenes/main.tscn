@@ -3,16 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://bi6e4p8lcsauk" path="res://scenes/platform.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://dhimhrj0ytlq" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://b455u27kh8o35" path="res://scripts/main.gd" id="1_sugp2"]
-[ext_resource type="PackedScene" uid="uid://laww8v53il1k" path="res://scenes/enemy.tscn" id="2_jyhfs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62jd7"]
 size = Vector2(300, 32)
 
 [node name="Main" type="Node2D" unique_id=1662324567]
 script = ExtResource("1_sugp2")
-
-[node name="Enemy" parent="." unique_id=1126184250 instance=ExtResource("2_jyhfs")]
-position = Vector2(576, 200)
 
 [node name="Platform" parent="." unique_id=397508024 instance=ExtResource("1_0wfyh")]
 position = Vector2(576, 100)
@@ -39,4 +35,9 @@ autostart = true
 [node name="Camera2D" type="Camera2D" parent="." unique_id=798973348]
 position = Vector2(576, 324)
 
+[node name="EnemyTimer" type="Timer" parent="." unique_id=446486266]
+wait_time = 5.0
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
