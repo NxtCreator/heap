@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bi6e4p8lcsauk" path="res://scenes/platform.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://dhimhrj0ytlq" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://b455u27kh8o35" path="res://scripts/main.gd" id="1_sugp2"]
-[ext_resource type="Script" uid="uid://c2vn6p05xjo3i" path="res://scripts/ui.gd" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://cvw8v3qtyfhvx" path="res://scripts/ui.gd" id="4_jyhfs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_62jd7"]
 size = Vector2(300, 32)
@@ -75,6 +75,21 @@ offset_left = -40.0
 offset_top = 30.0
 offset_bottom = 53.0
 grow_horizontal = 0
+
+[node name="PauseLabel" type="Label" parent="CanvasLayer" unique_id=1911105063]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.5
+offset_top = -11.5
+offset_right = 114.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Paused (pressed P to resume)"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]

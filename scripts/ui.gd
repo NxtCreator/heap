@@ -20,6 +20,10 @@ func _process(_delta: float) -> void:
 	if player == null:
 		return
 		
+	if Input.is_action_just_pressed("pause") and not player.is_dead:
+		get_tree().paused = not get_tree().paused
+	$PauseLabel.visible = get_tree().paused and not player.is_dead
+	
 	$ScoreLabel.text = str(player.best_height)
 	$GameOverLabel.visible = player.is_dead
 	$HighScoreLabel.text = "Best " + str(high_score)
