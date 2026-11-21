@@ -38,6 +38,9 @@ func _process(_delta: float) -> void:
 	if player == null:
 		return
 		
+	if player.is_dead && Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
+		
 	$CanvasLayer/ScoreLabel.text = str(player.best_height)
 		
 # Shelved for now
