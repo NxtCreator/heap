@@ -20,6 +20,7 @@ func die():
 	get_parent().add_child(death_puff)
 	death_puff.global_position = global_position
 	hide()
+	get_tree().paused = true
 	
 func _ready() -> void:
 	$Polygon2D.color = Palette.FG

@@ -34,15 +34,7 @@ func _on_timer_timeout() -> void:
 	
 func _process(_delta: float) -> void:
 	$Camera2D.position.y = lerp($Camera2D.position.y, camera_target_y, 0.5)
-	var player = get_tree().get_first_node_in_group("player")
-	if player == null:
-		return
 		
-	if player.is_dead && Input.is_action_just_pressed("restart"):
-		get_tree().reload_current_scene()
-		
-	$CanvasLayer/GameOverLabel.visible = player.is_dead
-	$CanvasLayer/ScoreLabel.text = str(player.best_height)
 		
 # Shelved for now
 #func _on_enemy_timer_timeout() -> void:

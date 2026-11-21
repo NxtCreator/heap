@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://knfrkgq0ijh0"]
 
 [node name="DeathPuff" type="CPUParticles2D" unique_id=613483844]
+process_mode = 3
 emitting = false
 amount = 24
 lifetime = 0.6
