@@ -4,15 +4,15 @@ Blocks fall like Tetris. Climb the pile before it squashes you or the screen eat
 
 **[Play it in your browser on itch.io](https://mysticbot32.itch.io/heap)**
 
-Made in a week for Hack Club Terra (week 5, theme: PEAK).
 
 ## How to play
 
 - **Move:** Left / Right arrow keys
 - **Jump:** Up arrow or Space
+- **Pause / resume:** P
 - **Restart after dying:** R
 
-Your score is how high you climb, and only your best height counts. A block that lands on you squashes you, and so does dropping below the bottom of the screen.
+Your score is how high you climb, and only your best height counts. Your best height is saved in your browser, so it's still there next time you play. A block that lands on you squashes you, and so does dropping below the bottom of the screen.
 
 ## How it works
 
@@ -38,8 +38,7 @@ The project uses the **Compatibility** renderer, which is also what the web expo
 
 ## Not done yet
 
-- Saved high score
-- Pause and start screen
+- A start screen and a clickable pause button
 - Enemies. The scene exists, but they aren't spawned yet.
 - A smarter spawner that avoids making unclimbable walls
 - Player art. The player is still a small white block.
